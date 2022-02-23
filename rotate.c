@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:01:21 by schung            #+#    #+#             */
-/*   Updated: 2022/02/21 23:04:39 by schung           ###   ########.fr       */
+/*   Updated: 2022/02/23 10:39:44 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,19 @@ void	rb(t_list **lst, int w)
 {
 	rotate(lst, 0);
 	if (w)
-        ft_putstr_fd("rb\n", STDOUT);
+		ft_putstr_fd("rb\n", STDOUT);
 }
 
 void	rra(t_list **lst, int w)
 {
 	rotate(lst, 1);
 	if (w)
-        ft_putstr_fd("rra\n", STDOUT);
+		ft_putstr_fd("rra\n", STDOUT);
 }
 
 void	rrb(t_list **lst, int w)
 {
 	rotate(lst, 1);
 	if (w)
-        ft_putstr_fd("rrb\n", STDOUT);
+		ft_putstr_fd("rrb\n", STDOUT);
 }

@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 22:18:18 by schung            #+#    #+#             */
-/*   Updated: 2022/02/22 22:39:26 by schung           ###   ########.fr       */
+/*   Updated: 2022/02/23 19:50:57 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,45 +50,59 @@ int	ft_count_args(char *s, char c)
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			quantity++;
-        i++; 
+        i++;
 	}
 	return (quantity);
 }
 
-void	check_repeat(char **str, int count_arg)
+int	main(int argc, char **argv)
 {
-	int	i;
-	int	k;
+	char	*str;
+	char	**start_array;
+	int		quantity_args;
+	int		*int_array;
+	t_stack	*stack_a;
+	int 	i = 0;
 
-	i = 0;
-	while (i < count_arg)
+	if (argc > 1)
 	{
-		k = 1;
-		while ((i + k) < count_arg)
+		str = ft_define(argv + 1);
+		start_array = ft_split(str, ' ');
+		quantity_args = ft_count_args(str, ' ');
+		check_input(start_array, quantity_args);
+		int_array = ft_get_int(start_array, quantity_args);
+		stack_a = creating_list(int_array, quantity_args);
+		
+		while (int_array[i])
 		{
-			if (ft_strncmp(str[i], str[i + k], 10))
-				k++;
-			else
-			    terminator();
+			printf("__%d__\n", int_array[i]);
+			i++;
 		}
-        i++;
-	}
-}
+		sorting_arr_int(int_array, quantity_args);
+		leaks(start_array);
+		free(str);
 
-int main(int argc, char **argv)
-{
-    char        *str;
-    char        **start_array;
-    int         quantity_args;
-    int         *int_array;
-    
-    if (argv > 1)
-    {
-        str = ft_define(argv + 1);
-        start_array = ft_split(str, ' ');
-        quantity_args = ft_count_args(str, ' ');
-        check_repeat(start_array, quantity_args);
-        int_array = ft_get_int(start_array, quantity_args);
-        
-    }
-}
+		sorting(&stack_a, quantity_args, int_array);
+
+		ft_lst_free(stack_a);
+		free(int_array);
+		/*		printf("asdas\n");
+		i = 0;
+		while (int_array[i])
+		{
+			printf("__%d__\n", int_array[i]);
+			i++;
+		}
+		printf("____\n");
+		//stack_a = ft_lstfirst_ps(stack_a);
+		while (stack_a)
+		{
+			printf("__%d__\n", stack_a->num);
+			stack_a = stack_a->next;
+		}	
+		printf("444\n");*/
+	}
+	else
+		ft_putstr_fd("usage: \n \tEnter integer parameters for sorting\n", STDERR);
+	return (0);
+	}
