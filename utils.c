@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 22:31:12 by schung            #+#    #+#             */
-/*   Updated: 2022/02/23 20:05:38 by schung           ###   ########.fr       */
+/*   Updated: 2022/02/28 19:14:26 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,28 +53,6 @@ int	ft_atoi_modern(const char *str)
 	return ((int)n * k);
 }
 
-/*int	*creat_arr(int argc, char **argv)
-{
-	int	*arr;
-	int	flag;
-	int	i;
-
-	arr = (int *)malloc(sizeof(int) * (argc - 1));
-	flag = 0;
-	i = 1;
-	while (i < argc)
-	{
-		arr[i - 1] = ft_atoi_mo(argv[i], &flag);
-		if (flag)
-		{
-			free(arr);
-			terminate();
-		}
-		i++;
-	}
-	return (arr);
-}*/
-
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
@@ -90,9 +68,9 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 	(*stack_a)->next = 0;
 	*stack_a = temp;
 	lst = *stack_b;
-	temp = ft_lstlast(*stack_b);
+	temp = ft_lstlast_ps(*stack_b);
 	while ((*stack_b)->next->next)
-		*stack_a = (*stack_b)->next;
+		*stack_b = (*stack_b)->next;
 	temp->next = lst;
 	lst->prev = temp;
 	temp->prev = 0;

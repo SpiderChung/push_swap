@@ -6,7 +6,7 @@
 #    By: schung <schung@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 15:57:27 by schung            #+#    #+#              #
-#    Updated: 2022/02/23 19:44:08 by schung           ###   ########.fr        #
+#    Updated: 2022/02/28 19:26:51 by schung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 HEADER = headers/push_swap.h
 
 SRC = push_swap.c utils.c leaks_and_errors.c add_func_lists.c check_input.c \
-		instructions_1.c instructions_2.c
+		instructions_1.c instructions_2.c sorting.c greatest_sorting.c
 
 OBJ = ${SRC:.c=.o}
 

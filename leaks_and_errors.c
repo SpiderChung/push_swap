@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 22:19:37 by schung            #+#    #+#             */
-/*   Updated: 2022/02/23 19:45:42 by schung           ###   ########.fr       */
+/*   Updated: 2022/02/28 19:39:59 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ t_stack	*creating_list(int *arr, int n)
 	while (i < n)
 	{
 		ft_lstadd_back_ps(&stack_a, ft_lstnew_ps(arr[i]));
-		printf("arr[i] = %d \n", arr[i]);
 		i++;
 	}
 	return (stack_a);

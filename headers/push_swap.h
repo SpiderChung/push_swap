@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 15:56:45 by schung            #+#    #+#             */
-/*   Updated: 2022/02/23 20:09:02 by schung           ###   ########.fr       */
+/*   Updated: 2022/02/28 19:35:33 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,12 @@ void	rrb(t_stack **stack);
 void	sorting(t_stack **stack_a, int count, int *arr_int);
 void	ft_sort_for_3(t_stack **stack);
 void	ft_sort_for_2(t_stack **stack);
+void	ft_sort_for_5(t_stack **stack_a, t_stack **stack_b);
+
+/*________greatest_sorting.c__________*/
+void	greatest_sorting(t_stack **stack_a, t_stack **stack_b, int count);
+t_stack	*check_min_list(t_stack **stack);
+int	check_position_list(t_stack **stack, t_stack *list);
 
 
 #endif
