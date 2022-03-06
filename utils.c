@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 22:31:12 by schung            #+#    #+#             */
-/*   Updated: 2022/02/28 19:14:26 by schung           ###   ########.fr       */
+/*   Updated: 2022/03/03 20:36:15 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,13 @@ void	set_index(t_stack *stack, int *arr, int count)
 		}
 		lst = lst->next;
 	}
+}
+
+void	set_stack_param(t_param *new, t_stack **stack)
+{
+	if (!(*stack))
+		return ;
+	new->min = check_stack_min(stack)->index;
+	new->max = check_stack_max(stack)->index;
+	new->mid = new->max / 2 + new->min;
 }

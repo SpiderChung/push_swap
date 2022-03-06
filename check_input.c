@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:08:32 by schung            #+#    #+#             */
-/*   Updated: 2022/02/28 18:58:32 by schung           ###   ########.fr       */
+/*   Updated: 2022/03/03 20:38:57 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	check_repeat(char **str, int count_arg)
 			else
 				terminator();
 		}
-        i++;
+		i++;
 	}
 }
 
@@ -61,7 +61,7 @@ void	check_input(char **str, int count_arg)
 	check_repeat(str, count_arg);
 }
 
-void sorting_arr_int(int *arr, int count)
+void	sorting_arr_int(int *arr, int count)
 {
 	int	tmp;
 	int	i;
@@ -99,7 +99,5 @@ int	*ft_get_int(char **str, int count)
 		i++;
 	}
 	ret[i] = '\0';
-//	ret = sorting_arr_int(ret, count);
 	return (ret);
 }
-

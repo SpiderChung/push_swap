@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 10:42:21 by schung            #+#    #+#             */
-/*   Updated: 2022/02/23 16:40:11 by schung           ###   ########.fr       */
+/*   Updated: 2022/03/06 20:36:49 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_stack	*ft_lstnew_ps(int content)
 	t_stack	*temp;
 
 	temp = (t_stack *)malloc(sizeof(t_stack));
-	if (!temp)
-		return (NULL);
+	if (temp == NULL)
+		terminator();
 	ft_bzero(temp, sizeof(t_stack));
 	temp->num = content;
 	return (temp);

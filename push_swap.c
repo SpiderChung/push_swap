@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 22:18:18 by schung            #+#    #+#             */
-/*   Updated: 2022/02/28 19:40:27 by schung           ###   ########.fr       */
+/*   Updated: 2022/03/06 20:46:47 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_count_args(char *s, char c)
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			quantity++;
-        i++;
+			i++;
 	}
 	return (quantity);
 }
@@ -62,7 +62,6 @@ int	main(int argc, char **argv)
 	int		quantity_args;
 	int		*int_array;
 	t_stack	*stack_a;
-	//int 	i = 0;
 
 	if (argc > 1)
 	{
@@ -72,39 +71,12 @@ int	main(int argc, char **argv)
 		check_input(start_array, quantity_args);
 		int_array = ft_get_int(start_array, quantity_args);
 		stack_a = creating_list(int_array, quantity_args);
-		/*
-		while (int_array[i])
-		{
-			printf("__%d__\n", int_array[i]);
-			i++;
-		}*/
 		sorting_arr_int(int_array, quantity_args);
 		leaks(start_array);
 		free(str);
-
 		sorting(&stack_a, quantity_args, int_array);
-		
 		free(int_array);
-		ft_lst_free(stack_a);
-		
-		/*		printf("asdas\n");
-		i = 0;
-		while (int_array[i])
-		{
-			printf("__%d__\n", int_array[i]);
-			i++;
-		}
-		printf("____\n");
-		//stack_a = ft_lstfirst_ps(stack_a);
-		while (stack_a)
-		{
-			printf("__%d__\n", stack_a->num);
-			stack_a = stack_a->next;
-		}	
-		printf("444\n");*/
+		ft_stack_free(stack_a);
 	}
-	else
-		ft_putstr_fd("\033[1;35musage: \n \tEnter integer "
-			"parameters for sorting\n", STDERR);
 	return (0);
-	}
+}

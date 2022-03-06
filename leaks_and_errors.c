@@ -6,13 +6,13 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 22:19:37 by schung            #+#    #+#             */
-/*   Updated: 2022/02/28 19:39:59 by schung           ###   ########.fr       */
+/*   Updated: 2022/03/06 20:46:53 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/push_swap.h"
 
-void	ft_lst_free(t_stack *lst)
+void	ft_stack_free(t_stack *lst)
 {
 	t_stack	*temp;
 
@@ -44,12 +44,14 @@ t_stack	*creating_list(int *arr, int n)
 {
 	t_stack	*stack_a;
 	int		i;
+	t_stack	*temp;
 
 	stack_a = NULL;
 	i = 0;
 	while (i < n)
 	{
-		ft_lstadd_back_ps(&stack_a, ft_lstnew_ps(arr[i]));
+		temp = ft_lstnew_ps(arr[i]);
+		ft_lstadd_back_ps(&stack_a, temp);
 		i++;
 	}
 	return (stack_a);

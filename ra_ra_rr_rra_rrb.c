@@ -6,7 +6,7 @@
 /*   By: schung <schung@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:02:12 by schung            #+#    #+#             */
-/*   Updated: 2022/02/23 19:19:37 by schung           ###   ########.fr       */
+/*   Updated: 2022/03/03 19:26:08 by schung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ void	rrb(t_stack **stack)
 	temp->prev = 0;
 	(*stack)->next = 0;
 	*stack = temp;
-	ft_putstr_fd("rra\n", STDOUT);
+	ft_putstr_fd("rrb\n", STDOUT);
 }
